@@ -49,6 +49,9 @@
                                 <state key="normal" title="Save">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnSaveClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WHK-yX-iUm"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Guess :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lvZ-9z-84r">
                                 <rect key="frame" x="29" y="379" width="87" height="23"/>
@@ -57,7 +60,7 @@
                                 <color key="textColor" red="1" green="0.78897213200000005" blue="0.21464454420000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Guess :" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X4J-JE-eV6">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Result :" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X4J-JE-eV6">
                                 <rect key="frame" x="66" y="687" width="282" height="121"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
@@ -83,6 +86,9 @@
                                 <state key="normal" title="Try It">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnTryItClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pkh-Vt-5nd"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Remaining Trial" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lC4-Ri-ycI">
                                 <rect key="frame" x="84" y="533" width="247" height="41"/>
@@ -115,6 +121,21 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="btnSave" destination="6df-KC-6y4" id="cKr-fz-Pu0"/>
+                        <outlet property="btnTryIt" destination="SCB-ya-GDj" id="Bcb-6h-xx3"/>
+                        <outlet property="imgGuessStatus" destination="V2N-XR-rhw" id="9D3-gm-sU2"/>
+                        <outlet property="imgSave" destination="izc-4g-PTj" id="epj-ei-VWn"/>
+                        <outlet property="imgStar1" destination="L3R-Ak-1hg" id="XaG-Io-bwX"/>
+                        <outlet property="imgStar2" destination="ZS2-SK-rXa" id="NZy-4d-tAG"/>
+                        <outlet property="imgStar3" destination="nbY-Vn-Q4C" id="g3y-RP-hHB"/>
+                        <outlet property="imgStar4" destination="7m1-se-0Ne" id="5iI-AW-ole"/>
+                        <outlet property="imgStar5" destination="1gT-AF-iDg" id="3ts-QP-QbW"/>
+                        <outlet property="lblResult" destination="X4J-JE-eV6" id="wR8-9p-1Kn"/>
+                        <outlet property="numberToGuess" destination="b5Y-JH-8Cg" id="MZ5-pX-bfn"/>
+                        <outlet property="numberToInput" destination="vxm-kw-4OX" id="qlS-lF-ROg"/>
+                        <outlet property="numbereToInput" destination="8bC-Xf-vdC" id="P1i-oS-Prn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
