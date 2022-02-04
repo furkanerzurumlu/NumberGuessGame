@@ -34,11 +34,29 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         stars = [imgStar1, imgStar2, imgStar3, imgStar4, imgStar5]
-
+        
+        imgSave.isHidden = true
+        imgGuessStatus.isHidden = true
+        btnTryIt.isEnabled = false
+        numberToGuess.isSecureTextEntry = true
+        lblResult.text = ""
 
     }
 
     @IBAction func btnSaveClicked(_ sender: UIButton) {
+        imgSave.isHidden = false
+        
+        if let t = Int(numberToGuess.text!){
+            targetNumber = t
+            btnTryIt.isEnabled = true
+            numberToGuess.isEnabled = false
+            btnSave.isEnabled = false
+            
+            imgSave.image = UIImage(named: "onay")
+        }else{
+            imgSave.image = UIImage(named: "hata")
+        }
+        
     }
     @IBAction func btnTryItClicked(_ sender: Any) {
     }
