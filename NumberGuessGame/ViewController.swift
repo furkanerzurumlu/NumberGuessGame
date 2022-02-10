@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     
     var stars : [UIImageView] = [UIImageView]()
     let maxGuess : Int = 5
-    var nowGuess : Int = -1
+    var nowGuess : Int = 0
     var targetNumber : Int = -1
     var gameSuccess : Bool = false
     
@@ -59,6 +59,30 @@ class ViewController: UIViewController {
         
     }
     @IBAction func btnTryItClicked(_ sender: Any) {
+        if gameSuccess == true || nowGuess > maxGuess{
+            return
+        }
+        
+        if let numberInput = Int(numberToInput.text!){
+            nowGuess += 1
+            stars[nowGuess-1].image = UIImage(named: "blackStar")
+            imgGuessStatus.isHidden = false
+            
+            if numberInput > targetNumber {
+                imgGuessStatus.image = UIImage(named: "downArrow")
+                numberToInput.backgroundColor = UIColor.red
+            }else if numberInput < targetNumber{
+                imgGuessStatus.image = UIImage(named: "upArrow")
+                numberToInput.backgroundColor = UIColor.red
+            }else {
+                imgGuessStatus.image = UIImage(named: "okey")
+                btnSave.isEnabled = true
+            }
+            
+        }else{
+            
+        }
+        
     }
     
 }
