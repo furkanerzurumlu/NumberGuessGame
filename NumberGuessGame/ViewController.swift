@@ -62,12 +62,11 @@ class ViewController: UIViewController {
         if gameSuccess == true || nowGuess > maxGuess{
             return
         }
+        imgGuessStatus.isHidden = false
         
         if let numberInput = Int(numberToInput.text!){
             nowGuess += 1
             stars[nowGuess-1].image = UIImage(named: "blackStar")
-            imgGuessStatus.isHidden = false
-            
             if numberInput > targetNumber {
                 imgGuessStatus.image = UIImage(named: "downArrow")
                 numberToInput.backgroundColor = UIColor.red
@@ -77,12 +76,43 @@ class ViewController: UIViewController {
             }else {
                 imgGuessStatus.image = UIImage(named: "okey")
                 btnSave.isEnabled = true
+                lblResult.text = "Successful Guess !"
+                numberToInput.backgroundColor = UIColor.green
+                numberToGuess.isSecureTextEntry = false
+                gameSuccess = true
+                
+                let alertController = UIAlertController(title: "Successful", message: "Successful Guess! \n Well Done!", preferredStyle: UIAlertController.Style.alert)
+                
+                let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+                
+               
+                
+                let playAgainAction = UIAlertAction(title: "Try Again !", style: UIAlertAction.Style.default, handler: nil)
+                alertController.addAction(okAction)
+                alertController.addAction(playAgainAction)
+                
+                present(alertController, animated: true, completion: nil)
+                
+                return
             }
             
         }else{
-            
+            imgGuessStatus.image = UIImage(named: "hata")
         }
         
+        if nowGuess == maxGuess {
+            btnTryIt.isEnabled = false
+            imgGuessStatus.image = UIImage(named: "hata")
+            lblResult.text = "Game Over \n Target Number : \(targetNumber)"
+            numberToGuess.isSecureTextEntry = false
+            
+            var alertController = UIAlertController(title: "Sorry :(", message: "Your Guess is Over.\n Target Number : \(targetNumber)", preferredStyle: UIAlertController.Style.alert)
+            var action = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+            alertController.addAction(action)
+            present(alertController, animated: true, completion: nil)
+            
+            return
+        }
     }
     
 }
